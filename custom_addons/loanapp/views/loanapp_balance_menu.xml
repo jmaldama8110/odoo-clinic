@@ -1,0 +1,7 @@
+<odoo>
+   <menuitem id="loanapp_application_root_menu" name="Loan App">
+        <menuitem id="loanapp_application_first_level_1" name="Loan Portfolio">
+            <menuitem id="loanapp_balance_menu_action" action="loanapp_balance_action"/>
+        </menuitem>
+    </menuitem>
+</odoo>

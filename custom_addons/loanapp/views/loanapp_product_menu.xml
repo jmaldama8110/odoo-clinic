@@ -1,0 +1,5 @@
+<odoo>
+       <menuitem id="loanapp_application_first_level_2" name="Settings" parent="loanapp_application_root_menu">
+           <menuitem id="loanapp_product_menu_action" action="loanapp_product_action"/>
+       </menuitem>
+</odoo>

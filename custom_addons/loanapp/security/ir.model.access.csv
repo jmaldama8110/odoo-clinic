@@ -1,0 +1,7 @@
+id,name,model_id/id,group_id/id,perm_read,perm_write,perm_create,perm_unlink
+access_loanapp_application,access_loanapp_application,model_loanapp_application,base.group_user,1,1,1,1
+access_loanapp_product,access_loanapp_product,model_loanapp_product,base.group_user,1,1,1,1
+access_loanapp_tag,access_loanapp_tag,model_loanapp_tag,base.group_user,1,1,1,1
+access_loanapp_guarantor,access_loanapp_guarantor,model_loanapp_guarantor,base.group_user,1,1,1,1
+access_loanapp_repayplan,access_loanapp_repayplan,model_loanapp_repayplan,base.group_user,1,1,1,1
+access_loanapp_balance,access_loanapp_balance,model_loanapp_balance,base.group_user,1,1,1,1

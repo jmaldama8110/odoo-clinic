@@ -1,0 +1,38 @@
+<odoo>
+
+    <record id="loanapp_repay_plan_view_tree" model="ir.ui.view">
+        <field name="name">loanapp.repay.plan.view.tree</field>
+        <field name="model">loanapp_repayplan</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="payment_number"/>
+                <field name="repay_amount"/>
+                <field name="interest_amount"/>
+                <field name="principal_amount"/>
+                <field name="tax_amount"/>
+                <field name="date_end"/>
+                <field name="loan_balance"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="loanapp_repay_plan_view_form" model="ir.ui.view">
+        <field name="name">loanapp.repay.plan.view.form</field>
+        <field name="model">loanapp_repayplan</field>
+        <field name="arch" type="xml">
+            <form>
+                <group>
+                    <field name="payment_number"/>
+                    <field name="date_start"/>
+                    <field name="date_end"/>
+                    <field name="repay_amount"/>
+                    <field name="interest_amount"/>
+                    <field name="principal_amount"/>
+                    <field name="tax_amount"/>
+                    <field name="loan_balance"/>
+                </group>
+            </form>
+        </field>
+    </record>
+
+</odoo>
