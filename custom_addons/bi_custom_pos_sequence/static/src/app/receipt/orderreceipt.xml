@@ -28,9 +28,11 @@
             <div class="pos-receipt-right-align">--------</div>
             <br/>
             <div class="pos-receipt-amount">
-                TOTAL
-                <span t-esc="props.formatCurrency(props.data.amount_total)" class="pos-receipt-right-align"/>
+                SUBTOTAL
+                <span t-esc="props.formatCurrency(props.data.amount_total - props.data.amount_tax)" class="pos-receipt-right-align"/>
             </div>
+
+
             <t t-if="props.data.rounding_applied">
                 <div class="pos-receipt-amount">
                   Rounding
@@ -63,27 +65,68 @@
                     <span t-esc="props.formatCurrency(props.data.total_discount)" class="pos-receipt-right-align"/>
                 </div>
             </t>
-            <div t-if="props.data.tax_details.length > 0" class="pos-receipt-taxes">
-                <span />
-                <span>VAT%</span>
-                <span>VAT</span>
-                <span>ExVAT</span>
-                <span>Total</span>
+
+
+            <div t-if="props.data.tax_details.length > 0" >
+<!--                <span />-->
+<!--                <span>IVA%</span>-->
+<!--                <span>IVA</span>-->
+<!--                <span>SUBTOTAL</span>-->
+<!--                <span>TOTAL</span>-->
                 <t t-foreach="props.data.tax_details" t-as="tax" t-key="tax.tax.id">
-                    <span t-esc="tax.tax.letter || ''"/>
-                    <span><t t-esc="tax.tax.amount"/> %</span>
-                    <span t-esc="props.formatCurrency(tax.amount, false)" />
-                    <span t-esc="props.formatCurrency(tax.base, false)" />
-                    <span t-esc="props.formatCurrency(tax.amount + tax.base, false)" />
+<!--                    <span t-esc="tax.tax.letter || ''"/>-->
+<!--                    <span><t t-esc="tax.tax.amount"/> %</span>-->
+<!--                    <span t-esc="props.formatCurrency(tax.amount, false)" />-->
+<!--                    <span t-esc="props.formatCurrency(tax.base, false)" />-->
+<!--                    <span t-esc="props.formatCurrency(tax.amount + tax.base, false)" />-->
+
+                    <div style="display: flex; justify-content: flex-end; ">
+                        <div style="width: 120px; text-align: right;"> <span >SUBTOTAL:</span></div>
+                        <div style="width: 120px; text-align: center;"> <span t-esc="props.formatCurrency(tax.base, false)"></span></div>
+                    </div>
+                    <div style="display: flex; justify-content: flex-end; ">
+                        <div style="width: 120px; text-align: right;"> <span >IVA:</span></div>
+                        <div style="width: 120px; text-align: center;"> <span t-esc="props.formatCurrency(tax.amount, false)"></span></div>
+                    </div>
+                    <div style=" display: flex; justify-content: flex-end; ">
+                        <div style="width: 120px; text-align: right;"> <span >TOTAL:</span></div>
+                        <div style="width: 120px; text-align: center;"> <span t-esc="props.formatCurrency(tax.amount + tax.base, false)"></span></div>
+                    </div>
+
+
                 </t>
-                <t t-if="props.data.tax_details.length > 1">
-                    <span />
-                    <span />
-                    <span t-esc="props.formatCurrency(props.data.amount_tax, false)" />
-                    <span t-esc="props.formatCurrency(props.data.total_without_tax, false)" />
-                    <span t-esc="props.formatCurrency(props.data.amount_total, false)" />
-                </t>
+<!--                <t t-if="props.data.tax_details.length > 1">-->
+<!--                    <span />-->
+<!--                    <span />-->
+<!--                    <span t-esc="props.formatCurrency(props.data.amount_tax, false)" />-->
+<!--                    <span t-esc="props.formatCurrency(props.data.total_without_tax, false)" />-->
+<!--                    <span t-esc="props.formatCurrency(props.data.amount_total, false)" />-->
+<!--                </t>-->
             </div>
+
+<!--            <div t-if="props.data.tax_details.length > 0" class="pos-receipt-taxes">-->
+<!--                <span />-->
+<!--                <span>IVA%</span>-->
+<!--                <span>IVA</span>-->
+<!--                <span>SUBTOTAL</span>-->
+<!--                <span>TOTAL</span>-->
+<!--                <t t-foreach="props.data.tax_details" t-as="tax" t-key="tax.tax.id">-->
+<!--                    <span t-esc="tax.tax.letter || ''"/>-->
+<!--                    <span><t t-esc="tax.tax.amount"/> %</span>-->
+<!--                    <span t-esc="props.formatCurrency(tax.amount, false)" />-->
+<!--                    <span t-esc="props.formatCurrency(tax.base, false)" />-->
+<!--                    <span t-esc="props.formatCurrency(tax.amount + tax.base, false)" />-->
+<!--                </t>-->
+<!--                <t t-if="props.data.tax_details.length > 1">-->
+<!--                    <span />-->
+<!--                    <span />-->
+<!--                    <span t-esc="props.formatCurrency(props.data.amount_tax, false)" />-->
+<!--                    <span t-esc="props.formatCurrency(props.data.total_without_tax, false)" />-->
+<!--                    <span t-esc="props.formatCurrency(props.data.amount_total, false)" />-->
+<!--                </t>-->
+<!--            </div>-->
+
+
 
             <div class="before-footer" />
 
