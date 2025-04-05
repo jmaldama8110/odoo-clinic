@@ -27,8 +27,8 @@
             <!-- Total -->
             <div class="pos-receipt-right-align">--------</div>
             <br/>
-            <div class="pos-receipt-amount">
-                SUBTOTAL
+            <div>
+                Subtotal:
                 <span t-esc="props.formatCurrency(props.data.amount_total - props.data.amount_tax)" class="pos-receipt-right-align"/>
             </div>
 
@@ -52,7 +52,7 @@
                 <span t-esc="props.formatCurrency(line.amount, false)" class="pos-receipt-right-align"/>
             </div>
 
-            <div class="pos-receipt-amount receipt-change mt-2">
+            <div class="receipt-change mt-2">
                 CHANGE
                 <span t-esc="props.formatCurrency(props.data.change)" class="pos-receipt-right-align"/>
             </div>
@@ -89,8 +89,8 @@
                         <div style="width: 120px; text-align: center;"> <span t-esc="props.formatCurrency(tax.amount, false)"></span></div>
                     </div>
                     <div style=" display: flex; justify-content: flex-end; ">
-                        <div style="width: 120px; text-align: right;"> <span >TOTAL:</span></div>
-                        <div style="width: 120px; text-align: center;"> <span t-esc="props.formatCurrency(tax.amount + tax.base, false)"></span></div>
+                        <div style="width: 120px; text-align: right; font-size:16px; font-weight: bold;"> <span >TOTAL:</span></div>
+                        <div style="width: 120px; text-align: center;font-size:16px; font-weight: bold;"> <span t-esc="props.formatCurrency(tax.amount + tax.base, false)"></span></div>
                     </div>
 
 
