@@ -5,6 +5,7 @@
             <t t-if="props.data.partner">
                 <div class="pos-receipt-center-align">
                     <div>Nombre Cliente: <t t-esc="props.data.partner.name" /></div>
+                    <div>Atentido por: <t t-esc="props.data.cashier"/></div>
                     <br />
                 </div>
             </t>
