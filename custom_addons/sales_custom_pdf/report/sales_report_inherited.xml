@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <template id="sales_report_pdf_inherited" inherit_id="sale.report_saleorder_document">
+        <xpath expr="//strong[@class='mr16']" position="replace">
+            <strong>no sub</strong>
+        </xpath>
+    </template>
+</odoo>
